@@ -8,17 +8,17 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.haroon.routines.R;
-import com.haroon.routines.models.Routine;
+import com.haroon.routines.models.Task;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
-public class RoutineListAdapter extends ArrayAdapter<Routine> {
+public class RoutineListAdapter extends ArrayAdapter<Task> {
 
     private Context context;
-    private ArrayList<Routine> routineList;
+    private ArrayList<Task> routineList;
 
-    public RoutineListAdapter(Context context, ArrayList<Routine> routines){
+    public RoutineListAdapter(Context context, ArrayList<Task> routines){
         super(context, 0, routines);
         this.context = context;
         this.routineList = routines;
@@ -38,12 +38,12 @@ public class RoutineListAdapter extends ArrayAdapter<Routine> {
             view.setTag(tag);
         }
 
-        Routine routine = routineList.get(position);
+        Task routine = routineList.get(position);
 
         Tag tag = (Tag)view.getTag();
 
         tag.textView.setText(routine.name);
-        tag.dates.setText(String.format("%s - %s", sdf.format(routine.startDate), sdf.format(routine.endDate)));
+        tag.dates.setText(String.format("%s - %s", sdf.format(routine.startTime), sdf.format(routine.endTime)));
 
         return view;
     }

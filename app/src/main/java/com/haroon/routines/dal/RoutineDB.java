@@ -1,27 +1,29 @@
 package com.haroon.routines.dal;
 
-import com.haroon.routines.models.Routine;
+import com.haroon.routines.models.Task;
 
 import java.util.ArrayList;
 import java.util.Date;
 
 public class RoutineDB {
 
-    public static Routine getCurrentRoutine() {
-        Routine r = new Routine();
+    public static Task getNextTask() {
+        Task r = new Task();
         r.name = "Routine #1";
-        r.startDate = new Date();
-        r.endDate = new Date();
+        r.startTime = new Date();
+        r.endTime = new Date();
         return r;
     }
 
-    public static ArrayList<Routine> getRoutineList() {
-        ArrayList<Routine> routineList = new ArrayList<Routine>();
+    public static ArrayList<Task> getActivityList() {
+        ArrayList<Task> routineList = new ArrayList<Task>();
 
-        Routine r = new Routine();
+        Task r = new Task();
         r.name = "Routine #1";
-        r.startDate = new Date();
-        r.endDate = new Date();
+        r.startTime = new Date();
+        Date d = new Date();
+        d.setTime(d.getTime() + 10000);
+        r.endTime = d;
 
         routineList.add(r);
         routineList.add(r);

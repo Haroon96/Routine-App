@@ -2,8 +2,8 @@ package com.haroon.routines.models;
 
 import java.util.Date;
 
-public class Routine {
+public class Task {
     public String name;
-    public Date startDate;
-    public Date endDate;
+    public Date startTime;
+    public Date endTime;
 }

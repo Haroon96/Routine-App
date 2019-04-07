@@ -14,7 +14,7 @@ import android.widget.ListView;
 
 import com.haroon.routines.adapters.RoutineListAdapter;
 import com.haroon.routines.dal.RoutineDB;
-import com.haroon.routines.models.Routine;
+import com.haroon.routines.models.Task;
 import com.haroon.routines.services.RoutineService;
 
 import java.util.ArrayList;
@@ -46,8 +46,7 @@ public class MainActivity extends AppCompatActivity {
     public void populateListView() {
         ListView listView = (ListView)findViewById(R.id.listview);
 
-
-        ArrayAdapter<Routine> adapter = new RoutineListAdapter(this, RoutineDB.getRoutineList());
+        ArrayAdapter<Task> adapter = new RoutineListAdapter(this, RoutineDB.getActivityList());
 
         listView.setAdapter(adapter);
     }
